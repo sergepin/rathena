@@ -1,12 +1,11 @@
 ### **1\. Instalación de herramientas básicas de desarrollo**
 
-bash
 
-Copiar código
+```
+sudo apt-get install build-essential
 
-`sudo apt-get install build-essential
-sudo apt install git`
-
+sudo apt install git
+```
 -   **`build-essential`**: Instala herramientas como `gcc`, `make` y otras necesarias para compilar software.
 -   **`git`**: Instala el sistema de control de versiones Git.
 
@@ -14,12 +13,12 @@ sudo apt install git`
 
 ### **2\. Actualización del sistema**
 
-bash
 
-Copiar código
+```
+sudo apt update
 
-`sudo apt update
-sudo apt upgrade`
+sudo apt upgrade
+```
 
 -   **`apt update`**: Actualiza la lista de paquetes disponibles.
 -   **`apt upgrade`**: Instala las versiones más recientes de los paquetes ya instalados.
@@ -28,14 +27,16 @@ sudo apt upgrade`
 
 ### **3\. Instalación de dependencias para compilación y desarrollo**
 
-bash
 
-Copiar código
+```
+sudo apt install libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake gcc
 
-`sudo apt install libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake gcc
 sudo apt-get install libpcre3 libpcre3-dev
+
 sudo apt -y install bsdextrautils
-sudo apt-get install -y git make libmysqlclient-dev zlib1g-dev libpcre3-dev`
+
+sudo apt-get install -y git make libmysqlclient-dev zlib1g-dev libpcre3-dev
+```
 
 Estas dependencias son necesarias para compilar rAthena y trabajar con bases de datos y servidores web:
 
@@ -47,15 +48,18 @@ Estas dependencias son necesarias para compilar rAthena y trabajar con bases de 
 
 ### **4\. Instalación de Apache**
 
-bash
 
-Copiar código
+```
+sudo apt install apache2
 
-`sudo apt install apache2
 sudo systemctl status apache2
+
 hostname -I
+
 sudo chown www-data:www-data /var/www/html
-sudo chmod -R 755 /var/www/html`
+
+sudo chmod -R 755 /var/www/html
+```
 
 -   **Apache2**: Servidor web.
 -   **`hostname -I`**: Muestra la dirección IP del servidor para saber cómo acceder a Apache desde el navegador.
@@ -65,12 +69,12 @@ sudo chmod -R 755 /var/www/html`
 
 ### **5\. Instalación y configuración de MariaDB (MySQL)**
 
-bash
 
-Copiar código
+```
+sudo apt install mariadb-server
 
-`sudo apt install mariadb-server
-sudo apt install mysql_secure_installation`
+sudo apt install mysql_secure_installation
+```
 
 -   **MariaDB**: Un sistema de gestión de bases de datos compatible con MySQL.
 -   **`mysql_secure_installation`**: Configura la seguridad básica de MariaDB (opciones como cambiar la contraseña de `root`, eliminar usuarios anónimos, etc.).
@@ -79,12 +83,12 @@ sudo apt install mysql_secure_installation`
 
 ### **6\. Instalación de PHP y phpMyAdmin**
 
-bash
 
-Copiar código
+```
+sudo apt install php
 
-`sudo apt install php
-sudo apt install phpmyadmin`
+sudo apt install phpmyadmin
+```
 
 -   **PHP**: Lenguaje de programación usado con Apache para generar contenido dinámico.
 -   **phpMyAdmin**: Interfaz web para gestionar bases de datos MySQL/MariaDB.
@@ -93,13 +97,14 @@ sudo apt install phpmyadmin`
 
 ### **7\. Configuración del servidor rAthena**
 
-bash
 
-Copiar código
+```
+git clone https://github.com/sergepin/rathena.git
 
-`clonar rathena
 ./configure --enable-packetver=packetver
-make clean server`
+
+make clean server
+```
 
 -   **Clonar rAthena**: Descarga el código fuente del proyecto usando Git.
 -   **Configurar rAthena**: Usa el comando `./configure` para preparar la compilación, indicando la versión del cliente (`--enable-packetver=packetver`).
@@ -109,11 +114,7 @@ make clean server`
 
 ### **8\. Subir datos a la base de datos**
 
-bash
 
-Copiar código
-
-`subir archivos sql a phpmyadmin`
 
 -   Usa phpMyAdmin para importar los archivos `.sql` incluidos con rAthena. Esto configura las tablas y datos necesarios para el funcionamiento del servidor.
 
@@ -121,9 +122,7 @@ Copiar código
 
 ### **9\. Iniciar el servidor rAthena**
 
-bash
 
-Copiar código
 
 `./athena-start start`
 
