@@ -1,4 +1,4 @@
-prontera,141,175,4	script	Estilista#prontera	20569,{
+prontera,141,175,4	script	Estilista#prontera	25018,{
 	setarray .@Styles[1],getbattleflag("max_cloth_color"),getbattleflag("max_hair_style"),getbattleflag("max_hair_color");
 	setarray .@Look[1],7,1,6;
 	set .@s, select("Color de Ropa:Estilo de Cabello:Color de Cabello");
