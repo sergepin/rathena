@@ -1543,7 +1543,10 @@ enum e_job_types
 
 	// Unofficial
 	JT_INVISIBLE = 32767,
-	JT_FAKENPC = -1
+	JT_FAKENPC = -1,
+
+	//Custom
+	JT_4_F_STYLA
 };
 
 // Old NPC range
